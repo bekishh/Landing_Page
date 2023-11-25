@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { styled } from "@mui/material";
+import Lackin from "./components/Lackin";
+import Werki from "./components/Werki";
 
 function App() {
+  const navigateToFirstPage = () => {
+    window.location.href = "https://lackin-rostock.de/";
+  };
+
+  // const navigateToSecondPage = () => {
+  //   window.location.href = "Ссылка_второй_страницы";
+  // };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="App">
+      <Werki onClick={navigateToFirstPage} />
+      <Lackin onClick={navigateToFirstPage} />
+    </Container>
   );
 }
 
 export default App;
+
+const Container = styled("div")(() => ({
+  display: "flex",
+  width: "100%",
+  height: "100vh",
+}));
